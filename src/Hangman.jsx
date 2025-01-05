@@ -91,13 +91,13 @@ class Hangman extends Component {
         const attempts = MAX_WRONG - this.state.wrongGuesses;
     
         const imagePaths = [
-            '/hangman/hangman-0.svg',
-            '/hangman/hangman-1.svg',
-            '/hangman/hangman-2.svg',
-            '/hangman/hangman-3.svg',
-            '/hangman/hangman-4.svg',
-            '/hangman/hangman-5.svg',
-            '/hangman/hangman-6.svg',
+            '/Hangman/hangman-0.svg',
+            '/Hangman/hangman-1.svg',
+            '/Hangman/hangman-2.svg',
+            '/Hangman/hangman-3.svg',
+            '/Hangman/hangman-4.svg',
+            '/Hangman/hangman-5.svg',
+            '/Hangman/hangman-6.svg',
         ];
     
         const hangmanImage = imagePaths[this.state.wrongGuesses];

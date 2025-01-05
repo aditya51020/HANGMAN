@@ -1,6 +1,6 @@
 import React from 'react'
-import Hangman from './hangman'
-import Display from './Components/Display'
+import Hangman from './Hangman.jsx';
+
 
 
 function App() {

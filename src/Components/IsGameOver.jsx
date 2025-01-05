@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import img from "/assets/lost.gif"
+import img from "/lost.gif"
 
 export default class IsGameOver extends Component {
   render() {
     return (
-      <div className=" ">
+      <div className="absolute top-24 right-20 ">
     <div className="w-[400px] bg-white rounded-lg shadow-xl flex flex-col items-center justify-center ">
         <img className="w-16 rounded-full object-cover mb-4" src={img} alt="Game Icon" />
         <h1 className="text-xl font-semibold text-center text-gray-800">Abbey chal phir se try kar</h1>

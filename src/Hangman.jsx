@@ -4,7 +4,8 @@ import Display from './Components/Display';
 import Input from './Components/Input';
 import IsWinner from './Components/IsWinner';
 import IsGameOver from './Components/IsGameOver';
-import Keyboard from './Components/Keyboard';
+
+
 
 const EMPTY_SPACE = "___";
 
@@ -88,21 +89,19 @@ class Hangman extends Component {
     render() {
         const MAX_WRONG = 6;
         const attempts = MAX_WRONG - this.state.wrongGuesses;
-
-        // img for 0-6 wrong guesses
+    
         const imagePaths = [
-            '/assets/hangman-0.svg',
-            '/assets/hangman-1.svg',
-            '/assets/hangman-2.svg',
-            '/assets/hangman-3.svg',
-            '/assets/hangman-4.svg',
-            '/assets/hangman-5.svg',
-            '/assets/hangman-6.svg',
+            '/hangman/hangman-0.svg',
+            '/hangman/hangman-1.svg',
+            '/hangman/hangman-2.svg',
+            '/hangman/hangman-3.svg',
+            '/hangman/hangman-4.svg',
+            '/hangman/hangman-5.svg',
+            '/hangman/hangman-6.svg',
         ];
-
-        // wrong guesses ke liye img 
+    
         const hangmanImage = imagePaths[this.state.wrongGuesses];
-
+    
         const game = (
             <>
                 <div className="col-span-2 absolute left-96 font-semibold lg:top-6 md:top-10 sm:top-16 text-sm md:text-base lg:text-lg items-center">
@@ -123,24 +122,25 @@ class Hangman extends Component {
                 </div>
             </>
         );
-        
+    
         const winnerORLoser = this.state.isWinner ? (
             <IsWinner resetGame={this.resetGame} />
         ) : this.state.isGameOver ? (
-            <IsGameOver   resetGame={this.resetGame} word={this.state.word.word} />
+            <IsGameOver resetGame={this.resetGame} word={this.state.word.word} />
         ) : (
             game
         );
-        
-        return ( <div className="hangman w-full min-h-[40vh] lg:h-auto max-w-5xl bg-white relative mx-auto box-border">
-           
+    
+       
+        return (
+            <div className="hangman w-full min-h-[40vh] lg:h-auto max-w-5xl bg-white relative mx-auto box-border">
                 <div className="grid grid-rows-3 grid-flow-col gap-4">
                     <div className="row-span-3 p-4 sm:p-6 md:p-8 lg:p-10 mt-6 md:mt-8 lg:mt-10">
-                        {/* Display the hangman image */}
+                        {/* Hangman image display */}
                         <img
                             src={hangmanImage}
                             alt={`Hangman ${this.state.wrongGuesses}`}
-                            className="  object-contain bg-red-60 mb-2 "
+                            className="object-contain mb-2"
                             onError={() => console.log("Failed to load image")}
                         />
                     </div>
@@ -150,7 +150,8 @@ class Hangman extends Component {
                 </div>
             </div>
         );
-    }    
+    }
+    
 }
 
 export default Hangman;

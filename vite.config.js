@@ -1,14 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+
 export default defineConfig({
-  base: '/Hangman',
   plugins: [react()],
+  base: './', // Ensures correct asset paths
   build: {
-    rollupOptions: {
-      input: '/src/main.jsx', 
-    },
+    outDir: 'dist', // Ensures output directory is correct
+    emptyOutDir: true, // Clears old builds before building
   },
 });
+
 
 
 
